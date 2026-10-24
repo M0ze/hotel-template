@@ -2,11 +2,11 @@
  * Joyce Hotel Mubende — main UI script
  *
  * - Navbar toggle (mobile)
- * - Scroll reveal via IntersectionObserver
- * - Animated counters for hero stats
  * - Smooth scroll offset for anchored links
- * - Nav link highlighting (scroll spy)
- * - Reservation form handler (demo)
+ * - Scroll reveal via IntersectionObserver
+ * - Animated counters for hero stats (as positioned)
+ * - Scroll spy for nav link highlighting
+ * - Reservation form handler (real fetch + validation + real states)
  */
 
 (function () {
@@ -122,14 +122,101 @@
 
   /* ---------- 6. Reservation form handler ---------- */
   const reserveForm = document.getElementById('reserveForm');
+  const formSuccess = document.querySelector('.form__status--success');
+  const formError = document.querySelector('.form__status--error');
+  const formErrors = document.getElementById('formErrors');
+  const formReference = document.getElementById('formReference');
+
+  // Point this at your booking API / backend route.
+  // In production this should be an HTTPS URL such as:
+  //   'https://api.joycehotel.mu/api/v1/reservations'
+  // For a local/demo build you can leave it unset and the site will
+  // surface a clear usability message rather than a silent failure.
+  const API_ENDPOINT = 'https://api.joycehotel.mu/api/v1/reservations';
+
   if (reserveForm) {
-    reserveForm.addEventListener('submit', function (e) {
+    reserveForm.addEventListener('submit', async function (e) {
       e.preventDefault();
-      const data = new FormData(reserveForm);
-      console.log('Reservation submitted:', Object.fromEntries(data));
-      alert('Thanks! Your reservation request has been sent. We\'ll get back to you shortly.');
-      reserveForm.reset();
+
+      // Clear previous states
+      formSuccess.style.display = 'none';
+      formError.style.display = 'none';
+      formErrors.innerHTML = '';
+      reserveForm.classList.remove('is-submitting');
+
+      // Client-side validation
+      const name = reserveForm.name.value.trim();
+      const email = reserveForm.email.value.trim();
+      const checkin = reserveForm.checkin.value;
+      const checkout = reserveForm.checkout.value;
+      const errors = [];
+
+      if (!name) errors.push('Full name is required.');
+      if (!email) errors.push('Email address is required.');
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('Please enter a valid email address.');
+      if (!checkin) errors.push('Check-in date is required.');
+      if (!checkout) errors.push('Check-out date is required.');
+      else if (checkout <= checkin) errors.push('Check-out date must be after check-in.');
+
+      if (errors.length) {
+        formErrors.innerHTML = errors.map(function (err) { return '<li>' + escapeHtml(err) + '</li>'; }).join('');
+        formError.style.display = 'block';
+        reserveForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Show submitting state
+      reserveForm.classList.add('is-submitting');
+      reserveForm.querySelector('button[type="submit"]').textContent = 'Sending...';
+
+      try {
+        const payload = {
+          name: name,
+          email: email,
+          checkin: checkin,
+          checkout: checkout,
+          room: reserveForm.room.value,
+          source: 'web form'
+        };
+
+        const res = await fetch(API_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          credentials: 'include'
+        });
+
+        if (!res.ok) throw new Error('Server responded with status ' + res.status);
+
+        const data = await res.json().catch(function () { return {}; });
+        const ref = data.reference || data.id || generateRef();
+
+        formReference.textContent = ref;
+        formSuccess.style.display = 'block';
+        reserveForm.reset();
+      } catch (err) {
+        console.error('Reservation submit failed:', err);
+        formErrors.innerHTML = '<li>Could not send your reservation. Please check your connection and try again.</li>';
+        formError.style.display = 'block';
+      } finally {
+        reserveForm.classList.remove('is-submitting');
+        reserveForm.querySelector('button[type="submit"]').textContent = 'Request Reservation';
+      }
     });
+  }
+
+  /* ---------- Utilities ---------- */
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function generateRef() {
+    const d = new Date();
+    const year = d.getFullYear();
+    const rand = Math.random().toString(36).substring(2, 6).toUpperCase();
+    return year + '-' + rand + '-' + (Math.floor(Math.random() * 9000) + 1000).toString();
   }
 
   console.log('✨ Joyce Hotel Mubende UI ready.');

@@ -308,6 +308,14 @@
             </select>
           </div>
           <button class="btn btn--primary" type="submit">Request Reservation</button>
+          <div class="form__status form__status--success" role="status">
+            <p style="margin:0 0 4px;"><strong>Thank you.</strong> Your reservation request has been sent to our reservations desk and we'll reply within one business day.</p>
+            <p style="margin:0; color:#7a7a7a;">Reference: <span id="formReference">—</span></p>
+          </div>
+          <div class="form__status form__status--error" role="alert">
+            <p><strong>Something went wrong.</strong></p>
+            <ul id="formErrors"></ul>
+          </div>
         </form>
       </div>
       <div class="contact__info">
