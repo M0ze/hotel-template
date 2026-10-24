@@ -1,0 +1,31 @@
+/* ============================================================
+   NOVA STAY — Design Token
+   Brand, palette, type, spacing. Centralized so it's easy to
+   restyle the whole site from one place.
+============================================================ */
+:root {
+  /* Palette: dark futuristic base + cyan / violet accents */
+  --bg: #080a16;
+  --bg-elev: #0b0d1a;
+  --bg-elev-2: #101326;
+  --surface: #11162b;
+  --surface-2: #161c36;
+  --surface-3: #1c2444;
+  --border: rgba(0, 245, 255, 0.12);
+  --border-strong: rgba(0, 245, 255, 0.22);
+  --accent: #00f5ff;         /* cyan */
+  --accent-2: #7a00ff;       /* violet */
+  --accent-3: #00f9a8;       /* green (for positive stats) */
+  --text: #e8ecf8;
+  --text-muted: #9aa8c8;
+  --text-dim: #6b7a9e;
+  --hero-gradient: linear-gradient(180deg, rgba(8,10,22,.96) 0%, rgba(8,10,22,.88) 45%, rgba(8,10,22,.70) 100%);
+  --font-sans: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Inter', 'Roboto', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow-soft: 0 8px 32px rgba(0,0,0,.45), 0 0 0 1px rgba(0,245,255,.06);
+  --shadow-glow: 0 0 24px rgba(0,245,255,.18), 0 0 60px rgba(122,0,255,.08);
+  --transition: 0.35s cubic-bezier(.4,0,.2,1);
+  --max-width: 1200px;
+}

@@ -1,0 +1,44 @@
+/* ============================================================
+   Components (Buttons, cards, etc.) — extended here
+============================================================ */
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: .95rem;
+  padding: 14px 22px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+}
+.btn:active { transform: scale(.97); }
+
+.btn--primary {
+  background: var(--accent);
+  color: #060a18;
+  box-shadow: 0 4px 18px rgba(0,245,255,.25);
+}
+.btn--primary:hover {
+  background: var(--accent-2);
+  box-shadow: 0 6px 28px rgba(122,0,255,.3);
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+.btn--ghost:hover {
+  background: rgba(0,245,255,.08);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------- HERO / SECTION shared ---------- */
+.section:not(:last-child) { margin-bottom: 24px; }

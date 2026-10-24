@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOVA STAY — Futuristic Hotel</title>
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b0d1a'/><path d='M20 70 L50 30 L80 70' stroke='%2300f5ff' stroke-width='10' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+</head>
+<body>
+
+  <!-- 3D Stage -->
+  <div id="stage" aria-hidden="true"></div>
+
+  <!-- Overlay UI -->
+  <div id="overlay"></div>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-mark">✦</span>
+        <span class="nav__logo-text">NOVA<span class="nav__logo-text--accent">STAY</span></span>
+      </a>
+      <nav class="nav__menu" id="navMenu">
+        <a href="#hero" class="nav__link">Home</a>
+        <a href="#rooms" class="nav__link">Rooms</a>
+        <a href="#experiences" class="nav__link">Experiences</a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="#contact" class="btn btn--ghost">Reserve</a>
+        <button class="nav__btn" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__bg-grid"></div>
+      <div class="hero__bg-orb orb" style="--o:rgba(0,245,255,.12)"></div>
+      <div class="hero__bg-orb orb" style="--o:rgba(120,0,255,.10)"></div>
+      <div class="hero__bg-grid-lines"></div>
+    </div>
+    <div class="hero__content">
+      <span class="tag">✦ Now Booking</span>
+      <h1 class="hero__title">
+        Where <span class="title-reveal">the future</span>
+        <span class="title-reveal"> meets</span>
+        <span class="title-reveal"> luxury.</span>
+      </h1>
+      <p class="hero__sub">
+        A new dimension of hospitality. Designed by people who believe travel should feel like tomorrow.
+      </p>
+      <div class="hero__actions">
+        <a href="#rooms" class="btn btn--primary">Explore Rooms</a>
+        <a href="#contact" class="btn btn--ghost">Book a Stay</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat"><span class="stat__num" data-target="48">0</span><span class="stat__lbl">Deluxe Rooms</span></div>
+        <div class="stat"><span class="stat__num" data-target="12">0</span><span class="stat__lbl">Premium Suites</span></div>
+        <div class="stat"><span class="stat__num" data-target="99">0</span><span class="stat__lbl">Happy Stays</span></div>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="scroll-track">
+        <div class="scroll-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ROOOMS ===================== -->
+  <section class="section rooms" id="rooms">
+    <div class="section__inner">
+      <header class="section__header">
+        <p class="section__kicker">Our Collection</p>
+        <h2 class="section__title">Rooms &amp; Suites</h2>
+        <p class="section__desc">Every space is an experience — refined materials, intelligent lighting, and a calm you can feel.</p>
+      </header>
+      <div class="rooms__grid">
+        <article class="room">
+          <div class="room__visual">
+            <div class="room__visual-cube"></div>
+            <div class="room__visual-glow"></div>
+          </div>
+          <div class="room__body">
+            <span class="room__tag">Deluxe</span>
+            <h3 class="room__title">Aura Deluxe</h3>
+            <p class="room__desc">A serene bedroom with a glass-walled retreat, ambient lighting, and a view that changes with the day.</p>
+            <div class="room__meta"><span class="room__meta-item"><b>32</b> m²</span><span class="room__meta-item"><b>12</b> m² terrace</span></div>
+            <a href="#" class="room__btn">View Plan →</a>
+          </div>
+        </article>
+        <article class="room">
+          <div class="room__visual">
+            <div class="room__visual-cube"></div>
+            <div class="room__visual-glow"></div>
+          </div>
+          <div class="room__body">
+            <span class="room__tag">Suite</span>
+            <h3 class="room__title">Lumina Suite</h3>
+            <p class="room__desc">A two-zone sanctuary with a living terrace, smart climate, and floor-to-ceiling glass that meets the sky.</p>
+            <div class="room__meta"><span class="room__meta-item"><b>68</b> m²</span><span class="room__meta-item"><b>24</b> m² terrace</span></div>
+            <a href="#" class="room__btn">View Plan →</a>
+          </div>
+        </article>
+        <article class="room">
+          <div class="room__visual">
+            <div class="room__visual-cube"></div>
+            <div class="room__visual-glow"></div>
+          </div>
+          <div class="room__body">
+            <span class="room__tag">Presidential</span>
+            <h3 class="room__title">Aethel Suite</h3>
+            <p class="room__desc">The pinnacle of design — a private rooftop observatory, gourmet kitchen, and an infinity glass edge.</p>
+            <div class="room__meta"><span class="room__meta-item"><b>140</b> m²</span><span class="room__meta-item"><b>55</b> m² terrace</span></div>
+            <a href="#" class="room__btn">View Plan →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCES ===================== -->
+  <section class="section experiences" id="experiences">
+    <div class="section__inner">
+      <header class="section__header">
+        <p class="section__kicker">Beyond the Room</p>
+        <h2 class="section__title">Curated Experiences</h2>
+        <p class="section__desc">Everything you need — and more — to make your stay a memory.</p>
+      </header>
+      <div class="experiences__grid">
+        <div class="exp">
+          <div class="exp__icon">◉</div>
+          <h3 class="exp__title">Signature Dining</h3>
+          <p class="exp__desc">Organic, seasonally-driven cuisine by our award-winning kitchen.</p>
+        </div>
+        <div class="exp">
+          <div class="exp__icon">✦</div>
+          <h3 class="exp__title">Wellness Spa</h3>
+          <p class="exp__desc">Hydrotherapy circuits, massages, and silent wellness hours.</p>
+        </div>
+        <div class="exp">
+          <div class="exp__icon">⟐</div>
+          <h3 class="exp__title">Private Tours</h3>
+          <p class="exp__desc">Curated cultural and nature itineraries with local guides.</p>
+        </div>
+        <div class="exp">
+          <div class="exp__icon">◈</div>
+          <h3 class="exp__title">Sky Lounge</h3>
+          <p class="exp__desc">Rooftop bar &amp; observatory open late — stargazing included.</p>
+        </div>
+      </div>
+    </div>
+    <div class="experiences__bg"></div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section about" id="about">
+    <div class="about__visual">
+      <div class="about__visual-cube"></div>
+      <div class="about__visual-glow"></div>
+    </div>
+    <div class="about__content">
+      <header class="section__header">
+        <p class="section__kicker">The Story</p>
+        <h2 class="section__title">Contemporary Hospitality, Reimagined</h2>
+      </header>
+      <p class="about__text">
+        Nova Stay began with a simple question: what if a hotel felt less like a place you sleep, and more like
+        a space that thinks for you? We fused intelligent design, sustainable architecture, and a genuinely warm
+        service ethos — then stepped back and let the space do the work.
+      </p>
+      <p class="about__text">
+        Every wall, light, and texture was chosen to disappear — leaving only the experience. Our guests arrive
+        expecting a hotel and leave remembering a atmosphere.
+      </p>
+      <div class="about__meta">
+        <div class="meta-item"><span class="meta-item__num">8</span><span class="meta-item__lbl">Years of Design</span></div>
+        <div class="meta-item"><span class="meta-item__num">3</span><span class="meta-item__lbl">Design Icons</span></div>
+        <div class="meta-item"><span class="meta-item__num">24/7</span><span class="meta-item__lbl">Concierge</span></div>
+      </div>
+      <a href="#contact" class="btn btn--primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT / RESERVE ===================== -->
+  <section class="section contact" id="contact">
+    <div class="contact__inner">
+      <div class="contact__form-wrap">
+        <p class="section__kicker">Reserve Your Stay</p>
+        <h2 class="section__title">Book your night</h2>
+        <form class="contact__form" id="reserveForm">
+          <div class="form__row">
+            <div class="form__field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Alex Mercer" required />
+            </div>
+            <div class="form__field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="alex@example.com" required />
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__field">
+              <label for="checkin">Check-in</label>
+              <input id="checkin" name="checkin" type="date" required />
+            </div>
+            <div class="form__field">
+              <label for="checkout">Check-out</label>
+              <input id="checkout" name="checkout" type="date" required />
+            </div>
+          </div>
+          <div class="form__field">
+            <label for="room">Room</label>
+            <select id="room" name="room">
+              <option value="deluxe">Deluxe — $189/night</option>
+              <option value="lumina">Lumina Suite — $349/night</option>
+              <option value="aethel">Aethel Suite — $899/night</option>
+            </select>
+          </div>
+          <button class="btn btn--primary" type="submit">Send Reservation</button>
+        </form>
+      </div>
+      <div class="contact__info">
+        <div class="info-item">
+          <div class="info-item__icon">⟐</div>
+          <div class="info-item__body">
+            <span class="info-item__label">Address</span>
+            <span class="info-item__val">12 Promenade, New NYC</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item__icon">✦</div>
+          <div class="info-item__body">
+            <span class="info-item__label">Phone</span>
+            <span class="info-item__val">+1 (555) 482-9900</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item__icon">✉</div>
+          <div class="info-item__body">
+            <span class="info-item__label">Email</span>
+            <span class="info-item__val">stays@novastay.ex</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">✦ NOVA<span class="footer__logo--accent">STAY</span></span>
+        <p>Intelligence designed hospitality.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <span class="footer__col-title">Navigate</span>
+          <a href="#hero" class="footer__link">Home</a>
+          <a href="#rooms" class="footer__link">Rooms</a>
+          <a href="#experiences" class="footer__link">Experiences</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__col-title">Stay</span>
+          <a href="#" class="footer__link">Terms</a>
+          <a href="#" class="footer__link">Privacy</a>
+          <a href="#" class="footer__link">Sustainability</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__col-title">Connect</span>
+          <a href="#" class="footer__link">Instagram</a>
+          <a href="#" class="footer__link">X</a>
+          <a href="#" class="footer__link">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Nova Stay. All rights reserved.</span>
+        <span>Powered by ✦ Future</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="js/three-scene.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
