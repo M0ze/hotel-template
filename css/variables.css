@@ -12,9 +12,10 @@
   --surface-3: #2c3a4a;
   --border: #e5e0d5;
   --border-strong: #d4cdbd;
-  --accent: #8a6f3b;           /* refined gold */
+  --accent: #8a6f3b;           /* refined gold (pill, icons, links) */
   --accent-2: #b8860b;
   --accent-3: #a44a3a;         /* muted brick red */
+  --accent-text: #7a5c2e;      /* darker gold for text contrast on light backgrounds (WCAG AA) */
   --accent-soft: rgba(138, 111, 59, 0.10);
   --shadow-soft: 0 2px 12px rgba(0,0,0,.06), 0 8px 32px rgba(0,0,0,.08);
   --shadow-glow: 0 4px 24px rgba(138, 111, 59, .12);

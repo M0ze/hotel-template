@@ -220,7 +220,7 @@ a:hover { color: var(--accent-2); }
   font-family: var(--font-mono);
   font-size: .8rem;
   letter-spacing: .18em;
-  color: var(--accent);
+  color: var(--accent-text);
   text-transform: uppercase;
   margin-bottom: 12px;
 }
@@ -705,7 +705,7 @@ a:hover { color: var(--accent-2); }
 }
 .footer__link {
   display: block;
-  color: #6a6a6a;
+  color: #a8a8a8;
   font-size: .9rem;
   margin-bottom: 8px;
   transition: color var(--transition);
@@ -782,8 +782,18 @@ a:hover { color: var(--accent-2); }
   }
   .nav__menu.open { transform: translateX(0); }
   .nav__btn { display: flex; }
-  .hero-dual, .hero-dual__content, .hero-dual__img { grid-template-columns: 1fr; }
-  .hero { padding: 0 16px; }
+
+  /* Mobile hero: stack image + content to a single ~60vh viewport band */
+  .hero-dual { min-height: auto; }
+  .hero-dual__img {
+    height: 55vh;
+    min-height: 320px;
+    width: 100%;
+  }
+  .hero-dual__img img { height: 100%; width: 100%; object-fit: cover; }
+  .hero-dual__content { height: auto; padding: 0 24px 40px; }
+  .hero-dual__content > * { width: 100%; }
+
   .hero__stats, .hero-dual__stats { gap: 24px; }
   .section { padding: 64px 16px; }
   .dining__grid { grid-template-columns: 1fr; }
