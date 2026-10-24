@@ -276,6 +276,12 @@ a:hover { color: var(--accent-2); }
   position: absolute; inset: 0;
   background: linear-gradient(90deg, rgba(28,36,48,.65), transparent 60%);
 }
+.hero-dual__img-bg {
+  position: absolute; inset: 0;
+  background: url("https://images.unsplash.com/photo-1540959733332-f8f7762b4993?auto=format&fit=crop&w=2400&q=60") center/cover no-repeat;
+  opacity: .12;
+  pointer-events: none;
+}
 .hero-dual__content {
   position: relative;
   z-index: 2;
