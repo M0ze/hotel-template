@@ -2,12 +2,10 @@
    Animations
 ============================================================ */
 
-/* ---------- Keyframes defined in base.css for reusability ----------
-   fade-up, scroll-bounce
-------------------------------------------------------- */
+/* ---------- Keyframes (fade-up + scroll-bounce) defined in base.css ---------- */
 
-/* ---------- Stagger Entrance for cards ---------- */
-.room, .exp, .about__text, .contact__info, .footer__col {
+/* ---------- Stagger entrance for cards ---------- */
+.room, .dining-card, .wf, .about__text, .contact__info, .footer__col {
   opacity: 0;
   transform: translateY(24px);
   animation: fade-up .7s cubic-bezier(.4,0,.2,1) forwards;
@@ -15,30 +13,23 @@
 .room:nth-child(1) { animation-delay: .05s; }
 .room:nth-child(2) { animation-delay: .15s; }
 .room:nth-child(3) { animation-delay: .25s; }
-.exp:nth-child(1) { animation-delay: .05s; }
-.exp:nth-child(2) { animation-delay: .12s; }
-.exp:nth-child(3) { animation-delay: .19s; }
-.exp:nth-child(4) { animation-delay: .26s; }
+.dining-card:nth-child(1) { animation-delay: .05s; }
+.dining-card:nth-child(2) { animation-delay: .12s; }
+.dining-card:nth-child(3) { animation-delay: .19s; }
+.dining-card:nth-child(4) { animation-delay: .26s; }
+.wf:nth-child(1) { animation-delay: .06s; }
+.wf:nth-child(2) { animation-delay: .13s; }
+.wf:nth-child(3) { animation-delay: .20s; }
+.wf:nth-child(4) { animation-delay: .27s; }
 .about__text { animation-delay: .08s; }
 .contact__info { animation-delay: .12s; }
 .footer__col { animation-delay: .18s; }
 
-/* ---------- Typing / reveal for title letters ----------
-   (used via title-reveal spans above) ---------- */
+/* ---------- Hero scroll-dot bounce ---------- */
+.scroll-dot { animation: scroll-bounce 1.6s ease-in-out infinite; }
 
-/* ---------- Pulse glow on the hero orb taps ---------- */
-@keyframes pulse-glow {
-  0%, 100% { opacity: .6; }
-  50% { opacity: 1; }
-}
-
-/* ---------- Gradient accent shift (subtle, for hero title) ---------- */
-@keyframes accent-shift {
-  0%, 100% { background: var(--accent); }
-  50% { background: var(--accent-2); }
-}
-.accent-shimmer {
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  background-size: 200% auto;
-  animation: accent-shift 6s ease infinite;
+/* ---------- Subscription / count-up helper animation ---------- */
+.stat__num.animate {
+  animation: count-up .15s ease forwards;
+  animation-fill-mode: forwards;
 }

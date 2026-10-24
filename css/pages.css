@@ -1,16 +1,10 @@
 /* ============================================================
-   Page-specific component tweaks (rooms, experiences, about,
-   contact) — kept separate for readability
+   Page-specific component tweaks (rooms, dining, wellness,
+   about, contact) — kept separate for readability
 ============================================================ */
 
 /* Rooms */
 .rooms { padding-top: 0; }
-
-/* Experiences background glow (ambient) */
-.experiences__bg { z-index: 0; }
-
-/* About */
-.about__text + p { margin-top: 12px; }
 
 /* Contact */
 .contact__form button[type="submit"] { align-self: flex-start; }

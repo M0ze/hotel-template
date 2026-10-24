@@ -1,12 +1,12 @@
 /**
- * Nova Stay — main UI script
+ * Joyce Hotel Mubende — main UI script
  *
  * - Navbar toggle (mobile)
- * - Scroll reveal / scroll spy
+ * - Scroll reveal via IntersectionObserver
  * - Animated counters for hero stats
  * - Smooth scroll offset for anchored links
- * - Button cursor
- * - Simple nav link highlighting as you scroll
+ * - Nav link highlighting (scroll spy)
+ * - Reservation form handler (demo)
  */
 
 (function () {
@@ -32,7 +32,7 @@
   }
 
   /* ---------- 2. Active nav link (scroll spy) ---------- */
-  const sectionIds = ['hero', 'rooms', 'experiences', 'about', 'contact'];
+  const sectionIds = ['hero', 'rooms', 'dining', 'wellness', 'about', 'contact'];
   const navLinks = document.querySelectorAll('.nav__link');
 
   function updateSpy() {
@@ -74,9 +74,7 @@
   });
 
   /* ---------- 4. Scroll reveal with IntersectionObserver ---------- */
-  const revealEls = document.querySelectorAll(
-    '.room, .exp, .about__text, .contact__info, .footer__col'
-  );
+  const revealEls = document.querySelectorAll('.room, .dining-card, .wf, .about__text, .contact__info, .footer__col');
 
   const revealObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -91,7 +89,7 @@
     revealObserver.observe(el);
   });
 
-  /* ---------- 5. Animated counters in hero ---------- */
+  /* ---------- 5. Animated counters in hero (run only near top) ---------- */
   function animateCounters() {
     const stats = document.querySelectorAll('.stat__num');
     const duration = 1600;
@@ -99,7 +97,6 @@
 
     function frame(now) {
       const progress = Math.min((now - start) / duration, 1);
-      // easeOutExpo
       const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       stats.forEach(function (el) {
         const target = parseFloat(el.dataset.target);
@@ -111,7 +108,6 @@
     requestAnimationFrame(frame);
   }
 
-  // Only run counter animation when hero is near top
   function maybeAnimateCounters() {
     const hero = document.getElementById('hero');
     if (!hero) return;
@@ -124,21 +120,17 @@
   window.addEventListener('scroll', maybeAnimateCounters, { passive: true });
   maybeAnimateCounters();
 
-  /* ---------- 6. Fix window focus when clicking social links (if any) ---------- */
-  // (no-op here, but harmless)
-
-  /* ---------- 7. Form — prevent default + console log (demo) ---------- */
+  /* ---------- 6. Reservation form handler ---------- */
   const reserveForm = document.getElementById('reserveForm');
   if (reserveForm) {
     reserveForm.addEventListener('submit', function (e) {
       e.preventDefault();
       const data = new FormData(reserveForm);
-      // In production, POST to your backend here.
       console.log('Reservation submitted:', Object.fromEntries(data));
-      alert('Thanks! Your reservation request has been sent. We\'ll get back to you soon.');
+      alert('Thanks! Your reservation request has been sent. We\'ll get back to you shortly.');
       reserveForm.reset();
     });
   }
 
-  console.log('✨ Nova Stay UI ready.');
+  console.log('✨ Joyce Hotel Mubende UI ready.');
 })();
