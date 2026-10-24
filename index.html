@@ -1,14 +1,11 @@
-# Joyce Hotel Mubende — Luxury Hotel Landing
-# A clean, premium, fully-responsive hotel landing for Joyce Hotel Mubende, Mubende, Uganda.
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Joyce Hotel Mubende — a refined luxury hotel in the heart of Mubende, Uganda. Elegant rooms, memorable dining, and personalized hospitality." />
-  <title>Joyce Hotel Mubende | Luxury Hospitality in Mubende, Uganda</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230d0f1a'/><text x='50' y='72' font-family='system-ui,Arial' font-size='52' font-weight='800' fill='%23f2b632' text-anchor='middle'>J</text></svg>" />
+  <meta name="description" content="Joyce Hotel Mubende — a refined luxury boutique hotel in the heart of Mubende, Uganda. Thoughtfully appointed rooms, an award-winning restaurant, and mindful service." />
+  <title>Joyce Hotel Mubende | A Luxury Boutique Hotel in Mubende, Uganda</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231c2430'/><text x='50' y='70' font-family='Playfair Display, serif' font-size='56' font-weight='700' fill='%238a6f3b' text-anchor='middle' letter-spacing='2'>J</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
@@ -23,10 +20,10 @@
   <!-- 3D Stage -->
   <div id="stage" aria-hidden="true"></div>
 
-  <!-- Overlay UI -->
+  <!-- Overlay -->
   <div id="overlay"></div>
 
-  <!-- ===================== NAV ===================== -->
+  <!-- ===================== NAVBAR ===================== -->
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="#" class="nav__logo">
@@ -38,7 +35,7 @@
         <a href="#rooms" class="nav__link">Rooms</a>
         <a href="#dining" class="nav__link">Dining</a>
         <a href="#wellness" class="nav__link">Wellness</a>
-        <a href="#about" class="nav__link">About</a>
+        <a href="#about" class="nav__link">Program</a>
         <a href="#contact" class="nav__link">Contact</a>
       </nav>
       <div class="nav__actions">
@@ -50,86 +47,97 @@
     </div>
   </header>
 
-  <!-- ===================== HERO ===================== -->
-  <section class="hero" id="hero">
-    <div class="hero__bg">
-      <div class="hero__bg-grid"></div>
-      <div class="hero__bg-orb orb" style="--o:rgba(242,182,50,.14)"></div>
-      <div class="hero__bg-orb orb" style="--o:rgba(0,214,255,.10)"></div>
-      <div class="hero__bg-orb orb" style="--o:rgba(120,0,255,.08)"></div>
+  <!-- ===================== HERO — Image + Content ===================== -->
+  <section class="hero-dual" id="hero">
+    <div class="hero-dual__img hero-dual__img-1">
+      <div class="hero-dual__img-bg"></div>
+      <img src="https://images.unsplash.com/photo-1618384231841-a51f59286d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Joyce Hotel Mubende lobby and restaurant interior" />
     </div>
-    <div class="hero__content">
-      <span class="tag">✦ Now Booking — Mubende, Uganda</span>
-      <h1 class="hero__title">
-        Where <span class="title-reveal">refined</span><span class="title-reveal"> luxury</span><span class="title-reveal"> meets</span><span class="title-reveal"> Mubende.</span>
-      </h1>
-      <p class="hero__sub">
-        A sanctuary of contemporary design and timeless warmth. Joyce Hotel Mubende offers thoughtfully appointed rooms, a celebrated dining experience, and mindful service — in the heart of central Uganda.
+    <div class="hero-dual__content">
+      <span class="hero-dual__eyebrow">Now Open — Mubende, Uganda</span>
+      <h1 class="hero-dual__title">A sanctuary of<br>cuisine and craft.<br>Quiet luxury.</h1>
+      <p class="hero-dual__sub">
+        Joyce Hotel Mubende is an intimate, contemporary retreat in the heart of central Uganda —
+        where refined rooms, a celebrated restaurant, and a wellness sanctuary converge around a
+        single idea: to make every stay feel considered, calm, and completely yours.
       </p>
-      <div class="hero__actions">
-        <a href="#rooms" class="btn btn--primary">Explore Rooms</a>
-        <a href="#contact" class="btn btn--ghost">Book Your Night</a>
+      <div class="hero-dual__actions">
+        <a href="#rooms" class="btn btn--gold">Explore Rooms</a>
+        <a href="#dining" class="btn btn--primary">Book a Table</a>
       </div>
-      <div class="hero__stats">
-        <div class="stat"><span class="stat__num" data-target="42">0</span><span class="stat__lbl">Luxury Rooms</span></div>
-        <div class="stat"><span class="stat__num" data-target="8">0</span><span class="stat__lbl">Specialty Suites</span></div>
-        <div class="stat"><span class="stat__num" data-target="120">0</span><span class="stat__lbl">Stays Since 2018</span></div>
-      </div>
-    </div>
-    <div class="hero__scroll">
-      <span>Scroll</span>
-      <div class="scroll-track">
-        <div class="scroll-dot"></div>
+      <div class="hero-dual__stats">
+        <div class="hero-dual__stat">
+          <span class="hero-dual__stat-num">24</span>
+          <span class="hero-dual__stat-lbl">Intimate Rooms</span>
+        </div>
+        <div class="hero-dual__stat">
+          <span class="hero-dual__stat-num">3</span>
+          <span class="hero-dual__stat-lbl">Signature Dining Rooms</span>
+        </div>
+        <div class="hero-dual__stat">
+          <span class="hero-dual__stat-num">4.9</span>
+          <span class="hero-dual__stat-lbl">Guest Rating</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== ROOOMS ===================== -->
+  <!-- ===================== ROOMS ===================== -->
   <section class="section rooms" id="rooms">
     <div class="section__inner">
-      <header class="section__header">
-        <p class="section__kicker">Our Collection</p>
-        <h2 class="section__title">Rooms &amp; Suites</h2>
-        <p class="section__desc">Every room is a thoughtfully composed space — refined materials, intelligent lighting, and a view that puts you first.</p>
-      </header>
+      <div class="section__header">
+        <p class="section__kicker">Accommodation</p>
+        <h2 class="section__title">Where every night feels like homecoming</h2>
+        <p class="section__desc">
+          Designed around the rhythms of daily life, our rooms and suites are quiet, light-filled
+          sanctuaries — layered in natural materials, soft light, and the kind of detail you notice
+          only when you slow down.
+        </p>
+      </div>
       <div class="rooms__grid">
         <article class="room">
           <div class="room__visual">
-            <div class="room__visual-cube"></div>
             <div class="room__visual-glow"></div>
+            <span class="room__tag">Deluxe Room</span>
           </div>
           <div class="room__body">
-            <span class="room__tag">Deluxe</span>
-            <h3 class="room__title">The Joyce Room</h3>
-            <p class="room__desc">A serene bedroom with a wooden-floor retreat, ambient lighting, and a view of the grounds. Floor-to-ceiling windows frame the warmth of Mubende.</p>
-            <div class="room__meta"><span class="room__meta-item"><b>36</b> m²</span><span class="room__meta-item"><b>14</b> m² terrace</span></div>
-            <a href="#" class="room__btn">View Plan →</a>
+            <h3 class="room__title">The Courtyard Room</h3>
+            <p class="room__desc">
+              A light-filled bedroom where warm wood, linen, and stone meet. Large windows open to a
+              private courtyard with a deep-jacuzzi and a low stone wall for morning tea.
+            </p>
+            <div class="room__meta"><span>Size: <b>38 m²</b></span><span>Beds: <b>1 King</b></span></div>
+            <a href="#contact" class="room__btn">Request Plan →</a>
           </div>
         </article>
         <article class="room">
           <div class="room__visual">
-            <div class="room__visual-cube"></div>
             <div class="room__visual-glow"></div>
-          </div>
-          <div class="room__body">
             <span class="room__tag">Suite</span>
-            <h3 class="room__title">The Sanctuary Suite</h3>
-            <p class="room__desc">A two-zone sanctuary with a private living terrace, smart climate, and wide lawns sweeping to the horizon.</p>
-            <div class="room__meta"><span class="room__meta-item"><b>72</b> m²</span><span class="room__meta-item"><b>26</b> m² terrace</span></div>
-            <a href="#" class="room__btn">View Plan →</a>
+          </div>
+          <div class="room__body">
+            <h3 class="room__title">The Garden Suite</h3>
+            <p class="room__desc">
+              A two-zone residence with a living lounge, homework bar, and a private veranda
+              overlooking the gardens. Ideal for long, unhurried stays.
+            </p>
+            <div class="room__meta"><span>Size: <b>72 m²</b></span><span>Beds: <b>1 King</b></span></div>
+            <a href="#contact" class="room__btn">Request Plan →</a>
           </div>
         </article>
         <article class="room">
           <div class="room__visual">
-            <div class="room__visual-cube"></div>
             <div class="room__visual-glow"></div>
+            <span class="room__tag">Presidential</span>
           </div>
           <div class="room__body">
-            <span class="room__tag">Presidential</span>
-            <h3 class="room__title">The Mubende Retreat</h3>
-            <p class="room__desc">The pinnacle of design — a private rooftop observatory, gourmet in-room kitchen, and a glass-edged infinity terrace.</p>
-            <div class="room__meta"><span class="room__meta-item"><b>150</b> m²</span><span class="room__meta-item"><b>60</b> m² terrace</span></div>
-            <a href="#" class="room__btn">View Plan →</a>
+            <h3 class="room__title">The Manor Suite</h3>
+            <p class="room__desc">
+              Our largest residence, offering a private library, chef's kitchen, and a rooftop
+              observatory with sweeping views of Mubende. For guests who want the whole property.
+            </p>
+            <div class="room__meta"><span>Size: <b>150 m²</b></span><span>Beds: <b>1 King</b></span></div>
+            <a href="#contact" class="room__btn">Request Plan →</a>
           </div>
         </article>
       </div>
@@ -139,31 +147,46 @@
   <!-- ===================== DINING ===================== -->
   <section class="section dining" id="dining">
     <div class="section__inner">
-      <header class="section__header">
-        <p class="section__kicker">Culinary Arts</p>
-        <h2 class="section__title">Dining at Joyce</h2>
-        <p class="section__desc">Seasonal, organic cuisine crafted by our head chef — a celebration of Ugandan ingredients, global technique, and timeless flavour.</p>
-      </header>
+      <div class="section__header">
+        <p class="section__kicker">Cuisine</p>
+        <h2 class="section__title">Taste of central Uganda, reimagined</h2>
+        <p class="section__desc">
+          Our kitchen draws on the region's richest seasonal ingredients — slow-cooked root vegetables,
+          forest game, wetlands fish, and wild herbs — paired with techniques that feel both global and
+          unmistakably local.
+        </p>
+      </div>
       <div class="dining__grid">
         <div class="dining-card">
           <div class="dining-card__icon">◉</div>
-          <h3>Signature Restaurant</h3>
-          <p>A single, warm dining room under a vaulted ceiling, serving seasonal menus built around the finest Ugandan produce.</p>
+          <h3>The Cooking Room</h3>
+          <p>
+            The restaurant's heart — a single, vaulted dining room where the open kitchen is the
+            stage. Reservations strongly advised; every dish arrives at its exact moment.
+          </p>
         </div>
         <div class="dining-card">
           <div class="dining-card__icon">◈</div>
-          <h3>The Lounge</h3>
-          <p>A refined bar-and-lounge space for day and night — craft cocktails, small plates, and sunset views over the grounds.</p>
+          <h3>The Bar</h3>
+          <p>
+            A refined, low-ceilinged lounge for day and night service, craft cocktails, and small plates
+            made in the open kitchen.
+          </p>
         </div>
         <div class="dining-card">
           <div class="dining-card__icon">⟐</div>
           <h3>In-Room Dining</h3>
-          <p>Curated breakfast and evening meals, prepared to your bedside and ready for your palate, whenever you choose.</p>
+          <p>
+            Breakfast, evening meals, and afternoon tea prepared to your bedside by our concierge team.
+          </p>
         </div>
         <div class="dining-card">
           <div class="dining-card__icon">◈</div>
-          <h3>Terrace Cafe</h3>
-          <p>An open-air café for morning coffee and light bites, blending the rhythm of the garden with a relaxed, unhurried pace.</p>
+          <h3>The Terrace</h3>
+          <p>
+            An open-air room for late lunches and sunset coffees, framed by the gardens and the cool
+            Ugandan evening air.
+          </p>
         </div>
       </div>
     </div>
@@ -171,65 +194,73 @@
 
   <!-- ===================== WELLNESS ===================== -->
   <section class="section wellness" id="wellness">
-    <div class="wellness__visual">
-      <div class="about__visual-cube"></div>
-      <div class="about__visual-glow"></div>
-    </div>
-    <div class="wellness__content">
-      <header class="section__header">
-        <p class="section__kicker">Mind &amp; Body</p>
-        <h2 class="section__title">Wellness &amp; Recovery</h2>
-        <p class="section__desc">A purpose-built wellness centre with thermal circuits, a spa, and quiet spaces for reflection — designed to restore your balance.</p>
-      </header>
-      <div class="wellness__features">
-        <div class="wf">
-          <span class="wf__icon">☉</span>
-          <h3 class="wf__title">Hydrotherapy Circuit</h3>
-          <p class="wf__desc">Temperature-contrast pools, steam, and rainwater showers — a full reset for body and mind.</p>
+    <div class="section__inner">
+      <div class="wellness__visual">
+        <div class="wellness__visual-glow"></div>
+      </div>
+      <div class="row">
+        <div class="row__content">
+          <p class="section__kicker">Wellness</p>
+          <h2 class="section__title">A private room for body and mind</h2>
+          <p class="section__desc">
+            A purpose-built wellness house on the western edge of the property, with thermal circuits,
+            a private spa, and quiet spaces for restoration — designed so that recovery becomes part of
+            the journey, not a separate stop.
+          </p>
         </div>
-        <div class="wf">
-          <span class="wf__icon">✦</span>
-          <h3 class="wf__title">Spa &amp; Massage</h3>
-          <p class="wf__desc">Organic, ingredient-led treatments delivered by our certified therapists in a private, calming suite.</p>
-        </div>
-        <div class="wf">
-          <span class="wf__icon">⟐</span>
-          <h3 class="wf__title">Silent Hours</h3>
-          <p class="wf__desc">A daily meditation and mindful-rest block with guided sessions and low-light relaxation zones.</p>
-        </div>
-        <div class="wf">
-          <span class="wf__icon">♨</span>
-          <h3 class="wf__title">Wellness Pack</h3>
-          <p class="wf__desc">A rounded stay package: spa access, wellness dining, and a dedicated recovery concierge.</p>
+        <div class="row__visual">
+          <div class="wellness__visual-glow"></div>
         </div>
       </div>
-      <a href="#contact" class="btn btn--primary">Book Your Spa Visit</a>
+      <div class="wellness__features">
+        <div class="wf">
+          <div class="wf__icon">☉</div>
+          <h3 class="wf__title">Thermal Circuit</h3>
+          <p class="wf__desc">Rain showers, steam, and thermal pools sequenced over a ninety-minute path.</p>
+        </div>
+        <div class="wf">
+          <div class="wf__icon">✦</div>
+          <h3 class="wf__title">Spa &amp; Massage</h3>
+          <p class="wf__desc">Organic, ingredient-led treatments in a private suite, by certified therapists.</p>
+        </div>
+        <div class="wf">
+          <div class="wf__icon">⟐</div>
+          <h3 class="wf__title">Silent Hours</h3>
+          <p class="wf__desc">A daily block of guided meditation and low-light rest in a dedicated quiet room.</p>
+        </div>
+        <div class="wf">
+          <div class="wf__icon">♨</div>
+          <h3 class="wf__title">Recovery Pack</h3>
+          <p class="wf__desc">A stay-inclusive package pairing spa access, wellness dining, and recovery concierge.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ===================== ABOUT ===================== -->
+  <!-- ===================== ABOUT / PROGRAM ===================== -->
   <section class="section about" id="about">
     <div class="about__visual">
-      <div class="about__visual-cube"></div>
       <div class="about__visual-glow"></div>
     </div>
     <div class="about__content">
-      <header class="section__header">
-        <p class="section__kicker">The Story</p>
-        <h2 class="section__title">Contemporary Hospitality, Reimagined</h2>
-      </header>
+      <p class="section__kicker">Program</p>
+      <h2 class="section__title">Independent hospitality, rooted in Mubende</h2>
       <p class="about__text">
-        Joyce Hotel Mubende began with a simple question: what if a hotel felt less like a place you sleep, and more like a space that thinks for you? We fused intelligent design, sustainable architecture, and a genuinely warm service ethos — then stepped back and let the space do the work.
+        Joyce Hotel Mubende opened in 2018 as a quiet answer to the growing appetite for slower travel in
+        central Uganda. It is a small property — twenty-four rooms, three dining rooms, one wellness house —
+        and what it lacks in scale it makes up for in attention.
       </p>
       <p class="about__text">
-        Every wall, light, and texture was chosen to disappear — leaving only the experience. Our guests arrive expecting a hotel and leave remembering an atmosphere. Rooted in Mubende and opened to the wider world, we hold hospitality close and look outward with intention.
+        Every guest is met by the same concierge team from arrival to departure. Meals are seasonal and
+        local; the gardens are kept organic; the rooms are set only when you ask. We do not chase volume.
+        We build a place that holds space for the way people choose to travel now.
       </p>
       <div class="about__meta">
         <div class="meta-item"><span class="meta-item__num">6</span><span class="meta-item__lbl">Years of Service</span></div>
-        <div class="meta-item"><span class="meta-item__num">42</span><span class="meta-item__lbl">Luxury Rooms</span></div>
-        <div class="meta-item"><span class="meta-item__num">3</span><span class="meta-item__lbl">Signature Dining Spaces</span></div>
+        <div class="meta-item"><span class="meta-item__num">24</span><span class="meta-item__lbl">Rooms &amp; Suites</span></div>
+        <div class="meta-item"><span class="meta-item__num">3</span><span class="meta-item__lbl">Dining Rooms</span></div>
       </div>
-      <a href="#contact" class="btn btn--ghost">Explore the Property →</a>
+      <a href="#contact" class="btn btn--ghost">Begin Your Stay →</a>
     </div>
   </section>
 
@@ -237,16 +268,20 @@
   <section class="section contact" id="contact">
     <div class="contact__inner">
       <div class="contact__form-wrap">
-        <p class="section__kicker">Reserve Your Stay</p>
-        <h2 class="section__title">Book your night</h2>
+        <p class="section__kicker">Reserve</p>
+        <h2 class="section__title">Book your night at Joyce Hotel Mubende</h2>
+        <p class="section__desc" style="margin-bottom:24px;">
+          Paid reservations are confirmed within one business day. For group, conference, or advance
+          inquiries, please write to our reservations desk directly.
+        </p>
         <form class="contact__form" id="reserveForm">
           <div class="form__row">
             <div class="form__field">
-              <label for="name">Name</label>
+              <label for="name">Full Name</label>
               <input id="name" name="name" type="text" placeholder="Alex Mercer" required />
             </div>
             <div class="form__field">
-              <label for="email">Email</label>
+              <label for="email">Email Address</label>
               <input id="email" name="email" type="email" placeholder="alex@example.com" required />
             </div>
           </div>
@@ -261,14 +296,14 @@
             </div>
           </div>
           <div class="form__field">
-            <label for="room">Room</label>
+            <label for="room">Room Selection</label>
             <select id="room" name="room">
-              <option value="joyce">The Joyce Room — $189/night</option>
-              <option value="sanctuary">The Sanctuary Suite — $349/night</option>
-              <option value="mubende">The Mubende Retreat — $899/night</option>
+              <option value="courtyard">The Courtyard Room — $189/night</option>
+              <option value="garden">The Garden Suite — $349/night</option>
+              <option value="manor">The Manor Suite — $899/night</option>
             </select>
           </div>
-          <button class="btn btn--primary" type="submit">Send Reservation</button>
+          <button class="btn btn--primary" type="submit">Request Reservation</button>
         </form>
       </div>
       <div class="contact__info">
@@ -282,7 +317,7 @@
         <div class="info-item">
           <div class="info-item__icon">✦</div>
           <div class="info-item__body">
-            <span class="info-item__label">Tel</span>
+            <span class="info-item__label">Reservations</span>
             <span class="info-item__val">+256 (342) 200 800</span>
           </div>
         </div>
@@ -290,7 +325,7 @@
           <div class="info-item__icon">✉</div>
           <div class="info-item__body">
             <span class="info-item__label">Email</span>
-            <span class="info-item__val">stays@joycehotel.mu</span>
+            <span class="info-item__val">reservations@joycehotel.mu</span>
           </div>
         </div>
         <div class="info-item">
@@ -309,7 +344,7 @@
     <div class="footer__inner">
       <div class="footer__brand">
         <span class="footer__logo">✦ Joyce<span class="footer__logo--accent">Hotel Mubende</span></span>
-        <p>Refined luxury in the heart of central Uganda.</p>
+        <p>Intimate luxury in the heart of central Uganda.</p>
       </div>
       <div class="footer__cols">
         <div class="footer__col">
@@ -320,10 +355,10 @@
           <a href="#wellness" class="footer__link">Wellness</a>
         </div>
         <div class="footer__col">
-          <span class="footer__col-title">Stay</span>
-          <a href="#" class="footer__link">Terms &amp; Conditions</a>
-          <a href="#" class="footer__link">Privacy Policy</a>
-          <a href="#" class="footer__link">Sustainability</a>
+          <span class="footer__col-title">Program</span>
+          <a href="#about" class="footer__link">About</a>
+          <a href="#contact" class="footer__link">Contact</a>
+          <a href="#" class="footer__link">Accessibility</a>
         </div>
         <div class="footer__col">
           <span class="footer__col-title">Connect</span>
@@ -334,7 +369,7 @@
       </div>
       <div class="footer__bottom">
         <span>© 2026 Joyce Hotel Mubende. All rights reserved.</span>
-        <span>Designed with care in Mubende, Uganda.</span>
+        <span>Designed for the modern traveller in Mubende, Uganda.</span>
       </div>
     </div>
   </footer>

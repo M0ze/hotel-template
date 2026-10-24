@@ -2,9 +2,25 @@
    Animations
 ============================================================ */
 
-/* ---------- Keyframes (fade-up + scroll-bounce) defined in base.css ---------- */
+/* ---------- Keyframes ---------- */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: .5; }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: .6; }
+  50% { opacity: 1; }
+}
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(12px) scale(.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
 
-/* ---------- Stagger entrance for cards ---------- */
+/* ---------- Stagger entrance ---------- */
 .room, .dining-card, .wf, .about__text, .contact__info, .footer__col {
   opacity: 0;
   transform: translateY(24px);
@@ -25,11 +41,38 @@
 .contact__info { animation-delay: .12s; }
 .footer__col { animation-delay: .18s; }
 
-/* ---------- Hero scroll-dot bounce ---------- */
-.scroll-dot { animation: scroll-bounce 1.6s ease-in-out infinite; }
-
-/* ---------- Subscription / count-up helper animation ---------- */
-.stat__num.animate {
-  animation: count-up .15s ease forwards;
-  animation-fill-mode: forwards;
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 900px) {
+  .about, .contact__inner { grid-template-columns: 1fr; padding: 32px 24px; }
+  .about__visual, .wellness__visual { min-height: 260px; }
+  .row { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 720px) {
+  .nav__menu {
+    position: fixed; top: 0; right: 0; bottom: 0;
+    background: var(--bg-elev);
+    padding: 100px 24px 24px;
+    flex-direction: column; align-items: flex-start;
+    gap: 16px;
+    border-left: 1px solid var(--border);
+    transform: translateX(100%); transition: transform .4s ease;
+  }
+  .nav__menu.open { transform: translateX(0); }
+  .nav__btn { display: flex; }
+  .hero, .hero-dual { padding: 0 16px; }
+  .hero__stats, .hero-dual__stats { gap: 24px; }
+  .section { padding: 64px 16px; }
+  .dining__grid { grid-template-columns: 1fr 1fr; }
+  .room__visual { height: 180px; }
+  .footer__cols { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .footer__bottom { flex-direction: column; gap: 8px; }
+}
+@media (max-width: 560px) {
+  .dining__grid { grid-template-columns: 1fr; }
+  .form__row { grid-template-columns: 1fr; }
+  .row { grid-template-columns: 1fr; }
+  .about { padding: 32px 20px; }
+  .contact__inner { padding: 32px 20px; }
 }
